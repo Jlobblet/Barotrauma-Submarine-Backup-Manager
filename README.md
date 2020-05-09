@@ -23,7 +23,7 @@ Checking put version number in submarine name will rename the (ingame) submarine
 #### Create Backup
 Clicking this button will create a backup of the selected submarine in the selected folder with the settings provided.
 ### Restore Tab
-[!The Restore Tab](/docs/RestoreTab.png)
+![The Restore Tab](/docs/RestoreTab.png)
 #### Backup Folder
 Click browse to select a folder here to list all `.sub` files inside it in the box below.
 #### Folder to Restore To
