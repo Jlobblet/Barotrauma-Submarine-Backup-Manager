@@ -2,6 +2,7 @@
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using NaturalSort.Extension;
@@ -160,7 +161,18 @@ namespace Barotrauma_Submarine_Backup_Manager
         {
             if (BackupLoadFilePath != "")
             {
-                File.Copy(BackupLoadFilePath, Path.Combine(RestoreFilePath, Path.GetFileName(BackupLoadFilePath)));
+                if (!RemoveVersionCheckBox.Checked)
+                {
+                    File.Copy(BackupLoadFilePath, Path.Combine(RestoreFilePath, Path.GetFileName(BackupLoadFilePath)));
+                }
+                else
+                {
+                    string pattern = @"_(\w+(?:-|$))?(v\d+)?(\.\d+)?((?:(?<=-)|-)\w+)?$";
+                    XDocument sub = SaveUtils.LoadSub(BackupLoadFilePath);
+                    string newName = Regex.Replace(sub.Root.Attribute("name").Value, pattern, "");
+                    sub.Root.Attribute("name").Value = newName;
+                    SaveUtils.SaveSub(sub, Path.Combine(RestoreFilePath, newName + ".sub"));
+                }
                 SetFeedbackMsg("Restored sub " + Path.GetFileName(BackupLoadFilePath) + ".");
             }
         }

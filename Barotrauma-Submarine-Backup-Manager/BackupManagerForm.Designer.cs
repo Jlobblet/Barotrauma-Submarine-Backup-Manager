@@ -58,6 +58,7 @@ namespace Barotrauma_Submarine_Backup_Manager
             this.SubSelectBrowseButton = new System.Windows.Forms.Button();
             this.SubPathTextBox = new System.Windows.Forms.TextBox();
             this.RestorePage = new System.Windows.Forms.TabPage();
+            this.RemoveVersionCheckBox = new System.Windows.Forms.CheckBox();
             this.RestoreMsgLabel = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.RestoreLocationBrowseButton = new System.Windows.Forms.Button();
@@ -370,6 +371,7 @@ namespace Barotrauma_Submarine_Backup_Manager
             // RestorePage
             // 
             this.RestorePage.BackColor = System.Drawing.SystemColors.Control;
+            this.RestorePage.Controls.Add(this.RemoveVersionCheckBox);
             this.RestorePage.Controls.Add(this.RestoreMsgLabel);
             this.RestorePage.Controls.Add(this.groupBox2);
             this.RestorePage.Controls.Add(this.RestoreSubNameLabel);
@@ -383,6 +385,16 @@ namespace Barotrauma_Submarine_Backup_Manager
             this.RestorePage.Size = new System.Drawing.Size(793, 432);
             this.RestorePage.TabIndex = 1;
             this.RestorePage.Text = "Restore";
+            // 
+            // RemoveVersionCheckBox
+            // 
+            this.RemoveVersionCheckBox.AutoSize = true;
+            this.RemoveVersionCheckBox.Location = new System.Drawing.Point(602, 265);
+            this.RemoveVersionCheckBox.Name = "RemoveVersionCheckBox";
+            this.RemoveVersionCheckBox.Size = new System.Drawing.Size(132, 21);
+            this.RemoveVersionCheckBox.TabIndex = 14;
+            this.RemoveVersionCheckBox.Text = "Remove version";
+            this.RemoveVersionCheckBox.UseVisualStyleBackColor = true;
             // 
             // RestoreMsgLabel
             // 
@@ -572,6 +584,7 @@ namespace Barotrauma_Submarine_Backup_Manager
         private System.Windows.Forms.TextBox RestorePathTextBox;
         private System.Windows.Forms.Label BackupMsgLabel;
         private System.Windows.Forms.Label RestoreMsgLabel;
+        private System.Windows.Forms.CheckBox RemoveVersionCheckBox;
     }
 }
 
