@@ -88,6 +88,10 @@ namespace Barotrauma_Submarine_Backup_Manager
                 {
                     BackupPictureBox.Image = FormUtils.GetImageFromString(sub.Root.Attribute("previewimage").Value);
                 }
+                else
+                {
+                    BackupPictureBox.Image = null;
+                }
             }
         }
 
@@ -144,6 +148,10 @@ namespace Barotrauma_Submarine_Backup_Manager
             if (sub.Root.Attribute("previewimage") != null)
             {
                 RestorePictureBox.Image = FormUtils.GetImageFromString(sub.Root.Attribute("previewimage").Value);
+            }
+            else
+            {
+                RestorePictureBox.Image = null;
             }
 
         }
