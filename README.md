@@ -30,5 +30,7 @@ Click browse to select a folder here to list all `.sub` files inside it in the b
 Click browse to select a folder to copy the restored subs to. Typically `Submarines/` or a submarine mod in `Mods/`.
 #### Submarine Backup List
 Displays a list of the submarines you can restore.
+#### Remove Version Number
+If checked, will remove the version number from the file name and submarine name of the submarine it restores. Caution: this can overwrite exisitng files!
 #### Restore
 Clicking this button will copy the backup version to the specified folder.
