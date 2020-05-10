@@ -33,6 +33,7 @@ namespace Barotrauma_Submarine_Backup_Manager
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackupManagerForm));
             this.TabControl = new System.Windows.Forms.TabControl();
             this.BackupPage = new System.Windows.Forms.TabPage();
+            this.BackupMsgLabel = new System.Windows.Forms.Label();
             this.BackupPictureBox = new System.Windows.Forms.PictureBox();
             this.BackupButton = new System.Windows.Forms.Button();
             this.SettingsGroupBox = new System.Windows.Forms.GroupBox();
@@ -57,6 +58,7 @@ namespace Barotrauma_Submarine_Backup_Manager
             this.SubSelectBrowseButton = new System.Windows.Forms.Button();
             this.SubPathTextBox = new System.Windows.Forms.TextBox();
             this.RestorePage = new System.Windows.Forms.TabPage();
+            this.RestoreMsgLabel = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.RestoreLocationBrowseButton = new System.Windows.Forms.Button();
             this.RestorePathTextBox = new System.Windows.Forms.TextBox();
@@ -67,8 +69,6 @@ namespace Barotrauma_Submarine_Backup_Manager
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BackupLoadFolderBrowseButton = new System.Windows.Forms.Button();
             this.BackupLoadPathTextBox = new System.Windows.Forms.TextBox();
-            this.BackupMsgLabel = new System.Windows.Forms.Label();
-            this.RestoreMsgLabel = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.BackupPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackupPictureBox)).BeginInit();
@@ -111,6 +111,15 @@ namespace Barotrauma_Submarine_Backup_Manager
             this.BackupPage.TabIndex = 0;
             this.BackupPage.Text = "Backup";
             // 
+            // BackupMsgLabel
+            // 
+            this.BackupMsgLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BackupMsgLabel.AutoSize = true;
+            this.BackupMsgLabel.Location = new System.Drawing.Point(6, 412);
+            this.BackupMsgLabel.Name = "BackupMsgLabel";
+            this.BackupMsgLabel.Size = new System.Drawing.Size(0, 17);
+            this.BackupMsgLabel.TabIndex = 15;
+            // 
             // BackupPictureBox
             // 
             this.BackupPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -136,8 +145,6 @@ namespace Barotrauma_Submarine_Backup_Manager
             // 
             // SettingsGroupBox
             // 
-            this.SettingsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.SettingsGroupBox.Controls.Add(this.VersioningGroupBox);
             this.SettingsGroupBox.Location = new System.Drawing.Point(6, 136);
             this.SettingsGroupBox.Name = "SettingsGroupBox";
@@ -377,6 +384,14 @@ namespace Barotrauma_Submarine_Backup_Manager
             this.RestorePage.TabIndex = 1;
             this.RestorePage.Text = "Restore";
             // 
+            // RestoreMsgLabel
+            // 
+            this.RestoreMsgLabel.AutoSize = true;
+            this.RestoreMsgLabel.Location = new System.Drawing.Point(6, 403);
+            this.RestoreMsgLabel.Name = "RestoreMsgLabel";
+            this.RestoreMsgLabel.Size = new System.Drawing.Size(0, 17);
+            this.RestoreMsgLabel.TabIndex = 13;
+            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -485,23 +500,6 @@ namespace Barotrauma_Submarine_Backup_Manager
             this.BackupLoadPathTextBox.Name = "BackupLoadPathTextBox";
             this.BackupLoadPathTextBox.Size = new System.Drawing.Size(696, 22);
             this.BackupLoadPathTextBox.TabIndex = 2;
-            // 
-            // BackupMsgLabel
-            // 
-            this.BackupMsgLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BackupMsgLabel.AutoSize = true;
-            this.BackupMsgLabel.Location = new System.Drawing.Point(6, 412);
-            this.BackupMsgLabel.Name = "BackupMsgLabel";
-            this.BackupMsgLabel.Size = new System.Drawing.Size(0, 17);
-            this.BackupMsgLabel.TabIndex = 15;
-            // 
-            // RestoreMsgLabel
-            // 
-            this.RestoreMsgLabel.AutoSize = true;
-            this.RestoreMsgLabel.Location = new System.Drawing.Point(6, 403);
-            this.RestoreMsgLabel.Name = "RestoreMsgLabel";
-            this.RestoreMsgLabel.Size = new System.Drawing.Size(0, 17);
-            this.RestoreMsgLabel.TabIndex = 13;
             // 
             // BackupManagerForm
             // 
