@@ -40,12 +40,10 @@ namespace Barotrauma_Submarine_Backup_Manager
 
         private void MajorRichTextBox_TextChanged(object sender, EventArgs e)
         {
-            bool empty = MajorRichTextBox.Text == string.Empty;
+            bool empty = MajorRichTextBox.Text == "";
             if (!int.TryParse(MajorRichTextBox.Text, out int result) && !empty)
             {
-                int returnpoint = MajorRichTextBox.SelectionStart - 1;
-                MajorRichTextBox.Text = MajorVersionNumber.ToString();
-                MajorRichTextBox.SelectionStart = returnpoint;
+                IgnoreTextChange(MajorRichTextBox, MajorVersionNumber.ToString());
             }
             else
             {
@@ -55,12 +53,10 @@ namespace Barotrauma_Submarine_Backup_Manager
 
         private void MinorRichTextBox_TextChanged(object sender, EventArgs e)
         {
-            bool empty = MinorRichTextBox.Text == string.Empty;
+            bool empty = MinorRichTextBox.Text == "";
             if (!int.TryParse(MinorRichTextBox.Text, out int result) && !empty)
             {
-                int returnpoint = MinorRichTextBox.SelectionStart - 1;
-                MinorRichTextBox.Text = MinorVersionNumber.ToString();
-                MinorRichTextBox.SelectionStart = returnpoint;
+                IgnoreTextChange(MinorRichTextBox, MinorVersionNumber.ToString());
             }
             else
             {
@@ -70,12 +66,35 @@ namespace Barotrauma_Submarine_Backup_Manager
 
         private void PrefixRichTextBox_TextChanged(object sender, EventArgs e)
         {
-            Prefix = PrefixRichTextBox.Text;
+            bool empty = PrefixRichTextBox.Text == "";
+            if (!Regex.IsMatch(PrefixRichTextBox.Text, @"^\w+$") && !empty)
+            {
+                IgnoreTextChange(PrefixRichTextBox, Prefix);
+            }
+            else
+            {
+                Prefix = PrefixRichTextBox.Text;
+            }
         }
 
         private void SuffixTextBox_TextChanged(object sender, EventArgs e)
         {
-            Suffix = SuffixRichTextBox.Text;
+            bool empty = SuffixRichTextBox.Text == "";
+            if (!Regex.IsMatch(SuffixRichTextBox.Text, @"^\w+$") && !empty)
+            {
+                IgnoreTextChange(SuffixRichTextBox, Prefix);
+            }
+            else
+            {
+                Suffix = SuffixRichTextBox.Text;
+            }
+        }
+
+        private void IgnoreTextChange(RichTextBox textBox, string value)
+        {
+            int returnpoint = textBox.SelectionStart - 1;
+            textBox.Text = value;
+            textBox.SelectionStart = returnpoint;
         }
 
         private void SubSelectBrowseButton_Click(object sender, EventArgs e)
